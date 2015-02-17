@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eMFPatternLanguage:PatternModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:eMFPatternLanguage="http://www.eclipse.org/incquery/patternlanguage/emf/EMFPatternLanguage" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:patternLanguage="http://www.eclipse.org/incquery/patternlanguage/PatternLanguage">
+  <patterns name="patterns.rootPackages" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="m"/>
+    <parameters name="pack">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Model"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package/packagedElement"/>
+            </type>
+          </tail>
+          <src var="m"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="pack"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.packages" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="parent"/>
+    <parameters name="p">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package/packagedElement"/>
+            </type>
+          </tail>
+          <src var="parent"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="p"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
+        <call patternRef="//@patterns.0">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="parent"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="p"/>
+          </parameters>
+        </call>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.smachines" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="p"/>
+    <parameters name="sm"/>
+    <bodies>
+      <constraints xsi:type="eMFPatternLanguage:EClassifierConstraint">
+        <type xsi:type="eMFPatternLanguage:ClassType">
+          <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//StateMachine"/>
+        </type>
+        <var var="sm"/>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Package/packagedElement"/>
+            </type>
+          </tail>
+          <src var="p"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="sm"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.regions" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="sm">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//StateMachine"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//StateMachine"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//StateMachine/region"/>
+            </type>
+          </tail>
+          <src var="sm"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="region"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.regionsComposite" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="cs">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State/region"/>
+            </type>
+          </tail>
+          <src var="cs"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="region"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.States" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="trans">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+      </type>
+    </parameters>
+    <parameters name="state1"/>
+    <parameters name="state2"/>
+    <parameters name="r"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition/source"/>
+            </type>
+          </tail>
+          <src var="trans"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="state2"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition/target"/>
+            </type>
+          </tail>
+          <src var="trans"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="state1"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/transition"/>
+            </type>
+          </tail>
+          <src var="r"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="trans"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.State" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="state">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="region">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PatternCompositionConstraint" negative="true">
+        <call patternRef="//@patterns.23">
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="state"/>
+          </parameters>
+          <parameters xsi:type="patternLanguage:VariableValue">
+            <value var="region"/>
+          </parameters>
+        </call>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="state"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.initial" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/initial"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.terminate" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/terminate"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.fork" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/fork"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.join" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/join"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.choice" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/choice"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.junction" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/junction"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.dHist" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/deepHistory"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.sHist" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EAttribute" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Pseudostate/kind"/>
+            </type>
+          </tail>
+          <src var="ps"/>
+          <dst xsi:type="eMFPatternLanguage:EnumValue">
+            <literal href="http://www.nomagic.com/magicdraw/UML/2.4.1#//PseudostateKind/shallowHistory"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.transitions" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="tr">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+      </type>
+    </parameters>
+    <parameters name="source"/>
+    <parameters name="target"/>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition/source"/>
+            </type>
+          </tail>
+          <src var="tr"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="source"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition/target"/>
+            </type>
+          </tail>
+          <src var="tr"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="target"/>
+          </dst>
+        </head>
+      </constraints>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/transition"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="tr"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.guards" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="tr">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+      </type>
+    </parameters>
+    <parameters name="con"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Transition/guard"/>
+            </type>
+          </tail>
+          <src var="tr"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="con"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.expression" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="c">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Constraint"/>
+      </type>
+    </parameters>
+    <parameters name="ex"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Constraint"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Constraint/specification"/>
+            </type>
+          </tail>
+          <src var="c"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ex"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.subSM" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="state">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="sm"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State/submachine"/>
+            </type>
+          </tail>
+          <src var="state"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="sm"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.entry" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="state">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="b"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State/entry"/>
+            </type>
+          </tail>
+          <src var="state"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="b"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.exit" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="state">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="b"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State/exit"/>
+            </type>
+          </tail>
+          <src var="state"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="b"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.doAct" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="state">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="b"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State/doActivity"/>
+            </type>
+          </tail>
+          <src var="state"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="b"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.invariant" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="state">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+      </type>
+    </parameters>
+    <parameters name="c">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Constraint"/>
+      </type>
+    </parameters>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//State/stateInvariant"/>
+            </type>
+          </tail>
+          <src var="state"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="c"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <patterns name="patterns.finalState" fileName="platform:/resource/hu.bme.mit.inf.validator.mdtransformpatterns/src/patterns/mdpatterns.eiq">
+    <parameters name="ps">
+      <type xsi:type="eMFPatternLanguage:ClassType">
+        <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//FinalState"/>
+      </type>
+    </parameters>
+    <parameters name="region"/>
+    <bodies>
+      <constraints xsi:type="patternLanguage:PathExpressionConstraint">
+        <head>
+          <type xsi:type="eMFPatternLanguage:ClassType">
+            <classname xsi:type="ecore:EClass" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region"/>
+          </type>
+          <tail>
+            <type xsi:type="eMFPatternLanguage:ReferenceType">
+              <refname xsi:type="ecore:EReference" href="http://www.nomagic.com/magicdraw/UML/2.4.1#//Region/subvertex"/>
+            </type>
+          </tail>
+          <src var="region"/>
+          <dst xsi:type="patternLanguage:VariableValue">
+            <value var="ps"/>
+          </dst>
+        </head>
+      </constraints>
+    </bodies>
+  </patterns>
+  <importPackages>
+    <packageImport>
+      <ePackage href="http://www.nomagic.com/magicdraw/UML/2.4.1#/"/>
+    </packageImport>
+  </importPackages>
+</eMFPatternLanguage:PatternModel>

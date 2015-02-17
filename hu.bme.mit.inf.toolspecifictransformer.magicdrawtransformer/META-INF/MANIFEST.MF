@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transformer
+Bundle-SymbolicName: hu.bme.mit.inf.toolspecifictransformer.magicdrawtransformer
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.emf.common,
+ org.eclipse.emf.ecore,
+ org.eclipse.incquery.runtime,
+ org.eclipse.uml2.uml,
+ com.nomagic.magicdraw.eclipse.rcp,
+ hu.bme.mit.inf.toolspecifictransformer.mdtransformpatterns;bundle-version="0.0.1"
+Export-Package: hu.bme.mit.inf.toolspecifictransformer.magicdrawtransformer

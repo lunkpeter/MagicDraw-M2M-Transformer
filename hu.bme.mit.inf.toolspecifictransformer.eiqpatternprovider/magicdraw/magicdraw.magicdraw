@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<project>
+	<modelLocation path='$IDE_project_root$/magicdraw/magicdraw.mdzip'/>
+	<nodes>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.eiqpatternprovider|src/hu/bme/mit/inf/toolspecifictransformer/eiqpatternprovider/core/EiqPatternProvider.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361968595_191717_3842'/>			<!-- EiqPatternProvider -->
+		</node>
+	</nodes>
+	<rtInformation/>
+</project>

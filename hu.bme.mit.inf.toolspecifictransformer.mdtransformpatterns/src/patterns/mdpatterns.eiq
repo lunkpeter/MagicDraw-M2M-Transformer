@@ -1,0 +1,109 @@
+package patterns
+
+import "http://www.nomagic.com/magicdraw/UML/2.4.1"
+
+
+pattern rootPackages(m, pack : Package) {
+	Model.packagedElement(m, pack);
+}
+
+pattern packages(parent, p : Package) {
+	Package.packagedElement(parent, p);
+	neg find rootPackages(parent, p);
+}
+
+pattern smachines(p, sm) {
+	StateMachine(sm);
+	Package.packagedElement(p, sm);
+}
+
+pattern regions(sm : StateMachine, region) {
+	StateMachine.region(sm, region);
+}
+
+pattern regionsComposite(cs : State, region) {
+	State.region(cs, region);
+}
+pattern State(state : State, region : Region) {
+	neg find finalState(state,region);
+	Region.subvertex(region,state);
+}
+
+pattern initial(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::initial);
+	Region.subvertex(region,ps);
+}
+
+pattern terminate(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::terminate);
+	Region.subvertex(region, ps);
+}
+
+pattern fork(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::fork);
+	Region.subvertex(region,ps);
+	
+	
+}
+
+pattern join(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::join);
+	Region.subvertex(region,ps);
+}
+
+pattern choice(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::choice);
+	Region.subvertex(region,ps);
+}
+
+pattern junction(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::junction);
+	Region.subvertex(region,ps);
+}
+
+pattern dHist(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::deepHistory);
+	Region.subvertex(region,ps);
+}
+
+pattern sHist(ps :Pseudostate, region) {
+	Pseudostate.kind(ps,::shallowHistory);
+	Region.subvertex(region,ps);
+}
+
+pattern transitions(tr : Transition, source,target,region) {
+	Transition.source(tr,source);
+	Transition.target(tr,target);
+	Region.transition(region, tr);
+}
+
+
+
+pattern guards(tr: Transition, con){
+	Transition.guard(tr,con);
+}
+
+pattern expression(c : Constraint, ex){
+	Constraint.specification(c,ex);
+}
+
+
+pattern subSM(state : State, sm) {
+	State.submachine(state,sm);
+}
+
+pattern entry(state : State, b) {
+	State.entry(state,b);
+}
+pattern exit(state : State, b) {
+	State.exit(state,b);
+}
+pattern doAct(state : State, b) {
+	State.doActivity(state,b);
+}
+pattern invariant(state : State, c: Constraint) {
+	State.stateInvariant(state,c);
+}
+pattern finalState(ps :FinalState, region){
+	Region.subvertex(region, ps);
+}

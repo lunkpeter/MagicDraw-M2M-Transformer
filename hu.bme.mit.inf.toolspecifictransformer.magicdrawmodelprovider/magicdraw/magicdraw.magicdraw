@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<project>
+	<modelLocation path='$IDE_project_root$/magicdraw/magicdraw.mdzip'/>
+	<nodes>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.magicdrawmodelprovider|src/hu/bme/mit/inf/toolspecifictransformer/magicdrawmodelprovider/MagicDrawModelProvider.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361997996_366986_3839'/>			<!-- MagicDrawModelProvider -->
+		</node>
+	</nodes>
+	<rtInformation/>
+</project>

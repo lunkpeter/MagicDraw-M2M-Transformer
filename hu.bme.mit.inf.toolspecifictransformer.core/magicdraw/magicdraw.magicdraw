@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<project>
+	<modelLocation path='$IDE_project_root$/magicdraw/magicdraw.mdzip'/>
+	<nodes>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.core|src/hu/bme/mit/inf/toolspecifictransformer/core/api/IPatternProvider.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361535632_743410_3845'/>			<!-- IPatternProvider -->
+		</node>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.core|src/hu/bme/mit/inf/toolspecifictransformer/core/api/TransformationManagerAPI.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361535924_212815_3848'/>			<!-- TransformationManagerAPI -->
+		</node>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.core|src/hu/bme/mit/inf/toolspecifictransformer/core/core/TransformationManager.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361536178_887260_3852'/>			<!-- TransformationManager -->
+		</node>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.core|src/hu/bme/mit/inf/toolspecifictransformer/core/core/IncQueryPatternMatcher.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361536543_63294_3862'/>			<!-- IncQueryPatternMatcher -->
+		</node>
+		<node>
+			<nodeUrl url='hu.bme.mit.inf.toolspecifictransformer.core|src/hu/bme/mit/inf/toolspecifictransformer/core/api/IModelProvider.java'/>
+			<classifierID id='_17_0_4_1_1608043f_1400361535209_956602_3842'/>			<!-- IModelProvider -->
+		</node>
+	</nodes>
+	<rtInformation/>
+</project>
